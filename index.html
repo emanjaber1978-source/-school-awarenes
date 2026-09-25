@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحدي السلامة الرقمية</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+        }
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        p {
+            color: #555;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .btn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 18px;
+            border-radius: 25px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #2980b9;
+        }
+        .hidden {
+            display: none;
+        }
+        .alert-box {
+            background-color: #e74c3c;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .alert-box h2 {
+            margin-top: 0;
+        }
+        .tips {
+            text-align: right;
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            border-right: 5px solid #e74c3c;
+            margin-top: 15px;
+        }
+        .tips ul {
+            margin: 0;
+            padding-right: 20px;
+        }
+        .tips li {
+            margin-bottom: 8px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- الواجهة الأولى: الفخ (الإغراء) -->
+        <div id="phishView">
+            <h1>🎁 مبروك!</h1>
+            <p>لقد تم اختياركِ عشوائياً للفوز برحلة مجانية أو قسيمة شراء بقيمة 500 دولار!</p>
+            <p>انقري على الزر أدناه لتأكيد استلام جائزتكِ فوراً قبل انتهاء المدة.</p>
+            <button class="btn" onclick="triggerTrap()">استلام الجائزة الآن</button>
+        </div>
+
+        <!-- الواجهة الثانية: الصدمة والتوعية (تظهر بعد النقر) -->
+        <div id="alertView" class="hidden">
+            <div class="alert-box">
+                <h2>🛑 قف! لقد وقعتِ في الفخ الإلكتروني!</h2>
+                <p style="color: white; margin: 0;">ما حدث للتو هو محاكاة حية لهجمات "التصيد الاحتيالي" (Phishing) التي تنفذها طالبات الصف الثاني عشر ضمن فعالية السلامة الرقمية.</p>
+            </div>
+            
+            <p>لو كان هذا الرابط حقيقياً وصادراً عن جهة خبيثة، لتمكن المخترق الآن من سرقة بياناتك، صورك، وكلمات مرورك!</p>
+            
+            <div class="tips">
+                <strong>💡 تذكري دائماً:</strong>
+                <ul>
+                    <li>لا تضغطي على أي رابط مجهول مهما كان الإغراء.</li>
+                    <li>تحققي دائماً من اسم النطاق (URL).</li>
+                    <li>احمي حساباتك بتفعيل المصادقة الثنائية (2FA).</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function triggerTrap() {
+            document.getElementById('phishView').classList.add('hidden');
+            document.getElementById('alertView').classList.remove('hidden');
+        }
+    </script>
+
+</body>
+</html>
